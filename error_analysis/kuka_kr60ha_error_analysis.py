@@ -55,8 +55,9 @@ fig = plt.figure()
 graphX = xRobotData - xSimData
 graphY = yRobotData - ySimData
 graphZ = zRobotData - zSimData
-AxisValue = np.asarray(list(df.Axis_1), dtype=float)
-totDiff = np.abs(np.sqrt(np.power(graphX,2) + np.power(graphY,2) + np.power(graphZ,2)))
+AxisNumber = 'Axis_' + axName
+AxisValue = np.asarray(list(df[AxisNumber]), dtype=float)
+totDiff = np.sqrt(np.power(graphX,2) + np.power(graphY,2) + np.power(graphZ,2))
      
 #2D plot of deviation in relation to axis value             
 plt.plot(AxisValue, graphX, color="#276E4F", linewidth=1, linestyle=":", label="X-error")
